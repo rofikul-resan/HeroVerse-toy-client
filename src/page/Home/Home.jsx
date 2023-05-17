@@ -1,9 +1,11 @@
 import Banner from "./Banner";
+import PhotoGallery from "./PhotoGallery";
 
 const Home = () => {
   return (
-    <div>
+    <div className="space-y-20">
       <Banner />
+      <PhotoGallery />
     </div>
   );
 };

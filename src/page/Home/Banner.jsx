@@ -3,7 +3,7 @@ import img2 from "../../img/banner2.jpg";
 import img3 from "../../img/banner3.jpeg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
-
+import { AiOutlineArrowRight } from "react-icons/ai";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -50,7 +50,7 @@ const Banner = () => {
               About Us
             </button>
             <button className="btn btn-outline btn-success rounded-none w-44 ">
-              Our Product
+              Our Product <AiOutlineArrowRight className="ml-auto text-xl" />
             </button>
           </div>
         </div>
