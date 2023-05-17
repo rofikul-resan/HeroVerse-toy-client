@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 const Banner = () => {
   return (
-    <div className="h-[500px] my-16 relative overflow-hidden rounded-lg">
+    <div className="h-[500px] mb-16 relative overflow-hidden rounded-lg">
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
