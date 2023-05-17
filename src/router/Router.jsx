@@ -4,6 +4,7 @@ import Home from "../page/Home/Home";
 import AuthLayout from "../layout/AuthLayout";
 import Login from "../page/Auth/Login";
 import SingUp from "../page/Auth/SingUp";
+import Error404 from "../Components/Error404";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element: <SingUp />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error404 />,
   },
 ]);
 

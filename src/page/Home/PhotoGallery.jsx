@@ -7,18 +7,29 @@ const PhotoGallery = () => {
     "https://i.ibb.co/LtYymGP/SPM-6055152-20137005-1-Copy.jpg",
     "https://i.ibb.co/CWd268h/SSHOT910594-01-ml-Copy.jpg",
     "https://i.ibb.co/cYNmBWD/Superhero-Toy-PNG-Image-Copy.png",
+    "https://i.ibb.co/M9V4ptS/Super-Hero-PNG-File-Copy.png",
   ];
   return (
-    <div className="grid w-9/12 mx-auto grid-cols-4 gap-3">
-      {imgGallery.map((img, i) => (
-        <div
-          key={i}
-          className="border rounded-md bg-base-200 hover:scale-[1.2]  "
-        >
-          {" "}
-          <img className="" src={img} alt="" />
-        </div>
-      ))}
+    <div>
+      <div className="md:w-1/2 text-center space-y-6 mb-12 mx-auto">
+        <h1 className="font-bold">Our Toys Photo Gallery </h1>
+        <p>
+          In the Toy Photo Gallery section, you can showcase a collection of
+          captivating and visually appealing images of your toys. Here are some
+          ideas on what you can mention about the Toy Photo Gallery section
+        </p>
+      </div>
+      <div className="grid w-9/12 mx-auto grid-cols-4 gap-3">
+        {imgGallery.map((img, i) => (
+          <div
+            key={i}
+            className="border rounded-md bg-base-200 hover:scale-[1.2]  "
+          >
+            {" "}
+            <img className="" src={img} alt="" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
