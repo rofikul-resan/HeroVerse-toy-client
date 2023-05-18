@@ -1,3 +1,6 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const PhotoGallery = () => {
   const imgGallery = [
     "https://i.ibb.co/pn7XxHR/1677502473392.png",
@@ -22,6 +25,7 @@ const PhotoGallery = () => {
       <div className="grid w-9/12 mx-auto grid-cols-4 gap-3">
         {imgGallery.map((img, i) => (
           <div
+            data-aos={i % 2 === 0 ? "fade-down-left" : "fade-up-right"}
             key={i}
             className="border rounded-md bg-base-200 hover:scale-[1.2]  "
           >
