@@ -6,6 +6,7 @@ import Login from "../page/Auth/Login";
 import SingUp from "../page/Auth/SingUp";
 import Error404 from "../Components/Error404";
 import AddToy from "../page/AddToy/AddToy";
+import ToyDetails from "../page/Home/toyDetails/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "add-toy",
+        path: "/add-toy",
         element: <AddToy />,
+      },
+      {
+        path: "/toys/:id",
+        element: <ToyDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toys/${params.id}`),
       },
     ],
   },

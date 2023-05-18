@@ -1,6 +1,7 @@
 import AdsSection from "./AdsSection";
 import Banner from "./Banner";
 import PhotoGallery from "./PhotoGallery";
+import ReviewSection from "./ReviewSection";
 import ShopByCategory from "./ShopCategory/ShopByCategory";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <PhotoGallery />
       <AdsSection />
       <ShopByCategory />
+      <ReviewSection />
     </div>
   );
 };

@@ -43,7 +43,7 @@ const ToyCard = ({ toy }) => {
           <RatingCom>{rating}</RatingCom> <span> {rating}</span>
         </div>
         <div className="card-actions">
-          <Link to={`/toy/${_id}`} className="btn btn-primary">
+          <Link to={`/toys/${_id}`} className="btn btn-primary">
             View Details
           </Link>
         </div>

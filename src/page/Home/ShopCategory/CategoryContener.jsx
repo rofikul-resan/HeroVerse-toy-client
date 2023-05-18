@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import ToyCard from "../../../Components/ToyCard";
 
 const CategoryContener = ({ category }) => {
+  const [limit, setLimit] = useState(6);
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/category?category=${category}`)
+    fetch(`http://localhost:5000/category?category=${category}&limit=${limit}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, [category]);
+  }, [category, limit]);
   return (
     <div>
       <h1 className="text-center font-bold my-6">
@@ -19,6 +20,14 @@ const CategoryContener = ({ category }) => {
           <ToyCard key={toy._id} toy={toy} />
         ))}
       </div>
+      {limit <= 6 && (
+        <button
+          onClick={() => setLimit(100)}
+          className="btn btn-success mx-auto block mt-4"
+        >
+          See More
+        </button>
+      )}
     </div>
   );
 };
