@@ -14,7 +14,7 @@ const CategoryContener = ({ category }) => {
         <span className="uppercase">{category}</span> Super Hero Toys
       </h1>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         {toys.map((toy) => (
           <ToyCard key={toy._id} toy={toy} />
         ))}

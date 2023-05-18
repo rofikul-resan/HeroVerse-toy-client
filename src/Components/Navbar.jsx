@@ -12,7 +12,7 @@ const Navbar = () => {
           <img className="w-[100px] mx-auto" src="/logo.svg" alt="logo" />
           <h2 className="font-bold text-black">HeroVerse Toys</h2>
         </div>
-        <div className="flex gap-6 text-lg  md:items-center font-semibold">
+        <div className="flex flex-col md:flex-row gap-6 text-lg  md:items-center font-semibold">
           <NavLink
             to={"/"}
             className={({ isActive }) =>

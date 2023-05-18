@@ -54,7 +54,7 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div className="absolute -bottom-40 right-40">
+        <div className="absolute hidden md:block -bottom-40 right-40">
           <img
             src="https://i.ibb.co/0GnhRbH/image-downloader-1678209495361.png"
             alt=""

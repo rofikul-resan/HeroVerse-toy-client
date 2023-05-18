@@ -16,11 +16,11 @@ const ToyCard = ({ toy }) => {
     } else if (code === 4) {
       return "flip-up";
     } else if (code === 5) {
-      return "flip-right";
+      return "fade-up";
     } else if (code === 6) {
-      return "flip-right";
+      return "zoom-out-right";
     } else if (code === 7) {
-      return "flip-left";
+      return "fade-down";
     } else if (code === 8) {
       return "fade-down-left";
     } else if (code === 9) {
@@ -28,7 +28,11 @@ const ToyCard = ({ toy }) => {
     } else return "fade-down";
   };
   return (
-    <div data-aos={aso()} className="card  bg-base-100 shadow-xl">
+    <div
+      data-aos={aso()}
+      data-aos-duration="1000"
+      className="card  bg-base-100 shadow-xl"
+    >
       <figure className="px-10 pt-10">
         <img src={pictureURL} alt={name} className="rounded-xl h-[250px]" />
       </figure>
