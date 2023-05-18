@@ -25,8 +25,8 @@ const AuthProvider = ({ children }) => {
   };
   const updateUser = (name, photoUrl) => {
     return updateProfile(auth.currentUser, {
-      displayName: { name },
-      photoURL: { photoUrl },
+      displayName: name,
+      photoURL: photoUrl,
     });
   };
 
@@ -41,6 +41,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const userUpdater = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
       setUser(currentUser);
       setLoading(false);
     });

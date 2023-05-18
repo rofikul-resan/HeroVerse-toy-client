@@ -4,11 +4,14 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./router/Router";
 import AuthProvider from "./provider/AuthProvider";
+import LoadingPage from "./Components/LoadingPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <LoadingPage>
+        <RouterProvider router={router} />
+      </LoadingPage>
     </AuthProvider>
   </React.StrictMode>
 );
