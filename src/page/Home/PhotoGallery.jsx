@@ -22,7 +22,7 @@ const PhotoGallery = () => {
           ideas on what you can mention about the Toy Photo Gallery section
         </p>
       </div>
-      <div className="grid w-9/12 mx-auto grid-cols-4 gap-3">
+      <div className="grid w-9/12 mx-auto grid-cols-2 md:grid-cols-4 gap-3">
         {imgGallery.map((img, i) => (
           <div
             data-aos={i % 2 === 0 ? "fade-down-left" : "fade-up-right"}

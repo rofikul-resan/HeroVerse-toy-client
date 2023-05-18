@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
+
 const AddToy = () => {
+  const { user } = useContext(AuthContext);
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,6 +27,7 @@ const AddToy = () => {
       quantity,
       description,
     };
+    console.log(newToy);
     fetch("http://localhost:5000/toy", {
       method: "POST",
       headers: {
@@ -33,6 +39,16 @@ const AddToy = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Toy added Successfully",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
           window.location.reload();
         }
       });
@@ -81,7 +97,7 @@ const AddToy = () => {
           <input
             type="text"
             placeholder="Seller Name"
-            defaultValue={"John's Collectibles"}
+            defaultValue={user?.displayName}
             name="sellerName"
             className="input input-bordered bg-white"
           />
@@ -95,7 +111,7 @@ const AddToy = () => {
           <input
             type="email"
             placeholder="Seller Email"
-            defaultValue={"john@example.com"}
+            defaultValue={user?.email}
             required
             name="sellerEmail"
             className="input input-bordered bg-white"
@@ -107,14 +123,14 @@ const AddToy = () => {
               Sub Category
             </span>
           </label>
-          <input
-            type="text"
-            placeholder="Sub Category"
-            defaultValue="marvel"
+          <select
             name="subCategory"
-            className="input input-bordered bg-white"
-            required
-          />
+            className="select select-bordered w-full bg-white"
+          >
+            <option value="marvel">Marvel</option>
+            <option value="avenger">Avenger</option>
+            <option value="dc">Dc</option>
+          </select>
         </div>
         <div className="form-control">
           <label className="label">

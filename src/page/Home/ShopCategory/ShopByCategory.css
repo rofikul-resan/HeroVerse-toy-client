@@ -1,0 +1,17 @@
+.react-tabs__tab--selected {
+  @apply tab border-none bg-success text-white !important;
+  color: white !important;
+}
+
+.react-tabs__tab {
+  @apply w-40 text-black text-center focus-visible:outline-red-50  !important;
+}
+
+#tab-contener {
+  @apply mx-auto;
+  width: 90%;
+}
+
+.react-tabs__tab-panel {
+  @apply px-12 py-5 bg-base-200 rounded-md;
+}
