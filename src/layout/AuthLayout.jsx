@@ -5,9 +5,10 @@ const AuthLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-evenly items-start my-32">
+      <div className="grid md:grid-cols-2  items-center my-16">
         <div>
           <img
+            className="mx-auto"
             src="https://i.ibb.co/M9V4ptS/Super-Hero-PNG-File-Copy.png"
             alt=""
           />
