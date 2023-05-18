@@ -16,15 +16,15 @@ const SocialLogin = () => {
   //     .catch((err) => console.log(err));
   // };
   return (
-    <div className="from-control flex gap-4 text-primary justify-center">
+    <div className="from-control flex gap-4 text-orange-600 justify-center">
       <button onClick="">
-        <BsGoogle className="btn btn-circle btn-ghost p-2" />
+        <BsGoogle className="btn btn-circle btn-ghost p-2 shadow-lg shadow-black/70" />
       </button>
       <button>
-        <BsGithub className="btn btn-circle btn-ghost p-2" />
+        <BsGithub className="btn btn-circle btn-ghost p-2 shadow-lg shadow-black/70" />
       </button>
       <button>
-        <BsFacebook className="btn btn-circle btn-ghost p-2" />
+        <BsFacebook className="btn btn-circle btn-ghost p-2 shadow-lg shadow-black/70" />
       </button>
     </div>
   );

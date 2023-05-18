@@ -42,7 +42,7 @@ const Login = () => {
       </form>
       <div>
         <p>
-          Already Have an account{" "}
+          Do not Have an account ?{" "}
           <Link to={"/auth/sing-up"} className="link link-hover link-primary">
             Sing Up
           </Link>{" "}
@@ -51,7 +51,7 @@ const Login = () => {
       <div>
         <div>
           <p className="text-center border-b border-black"></p>
-          <h1 className="text-center mb-5 "> Login With </h1>
+          <h1 className="text-center my-5 font-semibold "> Login With </h1>
         </div>
         <SocialLogin />
       </div>
