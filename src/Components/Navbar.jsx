@@ -27,6 +27,14 @@ const Navbar = () => {
             All Toys
           </NavLink>
           <NavLink
+            to={"/add-toy"}
+            className={({ isActive }) =>
+              isActive ? "border-b-2 border-sky-700" : ""
+            }
+          >
+            Add Toys
+          </NavLink>
+          <NavLink
             to={"/blog"}
             className={({ isActive }) =>
               isActive ? "border-b-2 border-sky-700" : ""

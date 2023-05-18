@@ -5,6 +5,7 @@ import AuthLayout from "../layout/AuthLayout";
 import Login from "../page/Auth/Login";
 import SingUp from "../page/Auth/SingUp";
 import Error404 from "../Components/Error404";
+import AddToy from "../Components/AddToy";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "add-toy",
+        element: <AddToy />,
       },
     ],
   },
