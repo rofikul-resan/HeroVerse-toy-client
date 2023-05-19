@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import { BiLogIn } from "react-icons/bi";
 import Swal from "sweetalert2";
@@ -7,6 +7,10 @@ import { AuthContext } from "../../provider/AuthProvider";
 import ReqLoading from "../../Components/ReqLoading";
 
 const SingUp = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state;
+  console.log(from);
   const { createUser, updateUser } = useContext(AuthContext);
   const [reqLoading, setReqLoading] = useState(false);
   const handleSingUP = (event) => {
@@ -24,6 +28,11 @@ const SingUp = () => {
         updateUser(name, photoUrL)
           .then(() => {})
           .catch();
+        Swal.fire({
+          icon: "success",
+          title: "Log in successful...",
+        });
+        navigate(from || "/");
       })
       .catch((err) => {
         setReqLoading(false);

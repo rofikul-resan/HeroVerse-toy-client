@@ -51,19 +51,23 @@ const AllToys = () => {
         </button>
       </div>
       <div className="overflow-x-auto mb-16 mt-8 flex justify-between relative">
-        <div className="px-3 hidden md:block space-y-2 border border-gray-600 h-fit py-6 ml-2 bg-sky-100 ">
-          <div className="h-20 w-20">
-            <img src={user.photoURL} alt="" className="rounded-md" />
+        {user ? (
+          <div className="px-3 hidden md:block space-y-2 border border-gray-600 h-fit py-6 ml-2 bg-sky-100 ">
+            <div className="h-20 w-20">
+              <img src={user?.photoURL} alt="" className="rounded-md" />
+            </div>
+            <h4>
+              <span className="font-semibold italic">Name : </span>
+              {user?.displayName}
+            </h4>
+            <p className="text-sm">
+              <span className="font-semibold italic">Email : </span>
+              {user?.email}
+            </p>
           </div>
-          <h4>
-            <span className="font-semibold italic">Name : </span>
-            {user.displayName}
-          </h4>
-          <p className="text-sm">
-            <span className="font-semibold italic">Email : </span>
-            {user.email}
-          </p>
-        </div>
+        ) : (
+          <div></div>
+        )}
         {toys.length === 0 ? (
           <div className="md:w-10/12 relative">
             <ReqLoading />

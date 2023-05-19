@@ -6,7 +6,7 @@ const AuthLayout = () => {
   return (
     <>
       <Navbar />
-      <div className="grid md:grid-cols-2  items-center my-16">
+      <div className="grid md:grid-cols-2 relative items-center py-16">
         <div>
           <img
             className="mx-auto"

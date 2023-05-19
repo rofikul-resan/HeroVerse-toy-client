@@ -1,11 +1,14 @@
 import { BiLogIn } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import ReqLoading from "../../Components/ReqLoading";
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location?.state;
   const { login } = useContext(AuthContext);
   const [reqLoading, setReqLoading] = useState(false);
   const handleLogIn = (event) => {
@@ -17,6 +20,11 @@ const Login = () => {
     login(email, password)
       .then(() => {
         setReqLoading(false);
+        Swal.fire({
+          icon: "success",
+          title: "Log in successful...",
+        });
+        navigate(from || "/");
       })
       .catch((err) => {
         setReqLoading(false);
@@ -73,7 +81,11 @@ const Login = () => {
       <div>
         <p>
           Do not Have an account ?{" "}
-          <Link to={"/auth/sing-up"} className="link link-hover link-primary">
+          <Link
+            to={"/auth/sing-up"}
+            state={from}
+            className="link link-hover link-primary"
+          >
             Sing Up
           </Link>{" "}
         </p>
