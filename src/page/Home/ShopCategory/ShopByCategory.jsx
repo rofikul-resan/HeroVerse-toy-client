@@ -15,23 +15,25 @@ const ShopByCategory = () => {
           ideas on what you can mention about the Toy Photo Gallery section
         </p>
       </div>
-      <Tabs id="tab-contener" className=" text-black mb-16">
-        <TabList className=" border-b-2 border-gray-600">
-          <Tab>Marvel</Tab>
-          <Tab>Avenger</Tab>
-          <Tab>Dc</Tab>
-        </TabList>
+      <section>
+        <Tabs id="tab-contener" className=" text-black mb-16">
+          <TabList className=" border-b-2 border-gray-600">
+            <Tab>Marvel</Tab>
+            <Tab>Avenger</Tab>
+            <Tab>Dc</Tab>
+          </TabList>
 
-        <TabPanel>
-          <CategoryContener category={"marvel"} />
-        </TabPanel>
-        <TabPanel>
-          <CategoryContener category={"avenger"} />
-        </TabPanel>
-        <TabPanel>
-          <CategoryContener category={"dc"} />
-        </TabPanel>
-      </Tabs>
+          <TabPanel>
+            <CategoryContener category={"marvel"} />
+          </TabPanel>
+          <TabPanel>
+            <CategoryContener category={"avenger"} />
+          </TabPanel>
+          <TabPanel>
+            <CategoryContener category={"dc"} />
+          </TabPanel>
+        </Tabs>
+      </section>
     </div>
   );
 };

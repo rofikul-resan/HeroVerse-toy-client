@@ -7,6 +7,7 @@ import SingUp from "../page/Auth/SingUp";
 import Error404 from "../Components/Error404";
 import AddToy from "../page/AddToy/AddToy";
 import ToyDetails from "../page/Home/toyDetails/ToyDetails";
+import AllToys from "../page/allToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/add-toy",
         element: <AddToy />,
+      },
+      {
+        path: "/all-toy",
+        element: <AllToys />,
       },
       {
         path: "/toys/:id",

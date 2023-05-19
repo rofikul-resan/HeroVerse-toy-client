@@ -49,7 +49,7 @@ const AddToy = () => {
               popup: "animate__animated animate__fadeOutUp",
             },
           });
-          window.location.reload();
+          form.reset();
         }
       });
   };
@@ -126,6 +126,7 @@ const AddToy = () => {
           <select
             name="subCategory"
             className="select select-bordered w-full bg-white"
+            required
           >
             <option value="marvel">Marvel</option>
             <option value="avenger">Avenger</option>
@@ -142,7 +143,7 @@ const AddToy = () => {
             type="text"
             placeholder=" Toy Price"
             name="price"
-            defaultValue={(50 + Math.random() * 50).toFixed(2)}
+            // defaultValue={(50 + Math.random() * 50).toFixed(2)}
             className="input input-bordered bg-white"
             required
           />
@@ -156,7 +157,7 @@ const AddToy = () => {
           <input
             type="text"
             placeholder="Available Quantity"
-            defaultValue={(100 + Math.random() * 50).toFixed()}
+            // defaultValue={(100 + Math.random() * 50).toFixed()}
             name="quantity"
             className="input input-bordered bg-white"
           />
@@ -170,7 +171,7 @@ const AddToy = () => {
           <input
             type="text"
             placeholder="Available Quantity"
-            defaultValue={(3 + Math.random() * 2).toFixed(1)}
+            // defaultValue={(3 + Math.random() * 2).toFixed(1)}
             name="rating"
             className="input input-bordered bg-white"
           />
@@ -179,9 +180,6 @@ const AddToy = () => {
       <div className="form-control">
         <textarea
           name="description"
-          defaultValue={
-            "This Superhero Action Figure Set includes a collection of popular Marvel and DC characters. Each figure is highly detailed and poseable, allowing kids to recreate their favorite superhero battles. The set comes with 6 action figures, including Iron Man, Batman, Spider-Man, Superman, Captain America, and Wonder Woman. It's the perfect gift for superhero fans of all ages!"
-          }
           placeholder="Description"
           className="h-60 w-full resize-none input input-bordered bg-white mt-8 p-6"
         ></textarea>

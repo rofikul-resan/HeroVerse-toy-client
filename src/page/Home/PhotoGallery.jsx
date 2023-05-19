@@ -7,8 +7,8 @@ const PhotoGallery = () => {
     "https://i.ibb.co/0r52GrR/149105-toy-superhero-avengers-hq-image-free-Copy.png",
     "https://i.ibb.co/rs3Fc7S/Mc-Farlane-Toys-DC-Multiverse-Animated-Series-The-Flash-7-Action-Figure-3.jpg",
     "https://i.ibb.co/crdLXq9/Mc-Farlane-Toys-DC-Multiverse-Black-Adam-with-Cloak-Black-Adam-Movie-Action-Figure.jpg",
-    "https://i.ibb.co/LtYymGP/SPM-6055152-20137005-1-Copy.jpg",
-    "https://i.ibb.co/CWd268h/SSHOT910594-01-ml-Copy.jpg",
+    "https://i.ibb.co/BG79gVC/149155-batman-toy-superhero-free-clipart-hq-Copy.png",
+    "https://i.ibb.co/99Jbcgz/149101-photos-toy-superhero-avengers-free-clipart-hd-Copy.png",
     "https://i.ibb.co/cYNmBWD/Superhero-Toy-PNG-Image-Copy.png",
     "https://i.ibb.co/M9V4ptS/Super-Hero-PNG-File-Copy.png",
   ];
