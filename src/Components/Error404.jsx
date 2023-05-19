@@ -14,12 +14,7 @@ const Error404 = () => {
           {" "}
           Go Home <AiFillHome className="ml-4 text-xl" />
         </Link>
-        <h1>Where is Toy ??. Baby Crying </h1>
-        <p>
-          💿 Hey developer 👋 You can provide a way better UX than this when
-          your app throws errors by providing your own ErrorBoundary or
-          errorElement prop on your route.
-        </p>
+        <h1 className="mb-4">Page not found ??. Baby Crying </h1>
       </div>
     </div>
   );
