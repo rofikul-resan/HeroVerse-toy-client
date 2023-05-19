@@ -3,14 +3,21 @@ import ToyRow from "./ToyRow";
 import { BiSearchAlt } from "react-icons/bi";
 import Swal from "sweetalert2";
 import ReqLoading from "../../Components/ReqLoading";
+import useUpdateTitle from "../../Hook/useUpdateTitle";
 
 const AllToys = () => {
+  useUpdateTitle("All Toys");
   const searchText = useRef("");
   const [toys, setToys] = useState([]);
   const [page, setPage] = useState(0);
   const [url, setUrl] = useState("");
   useEffect(() => {
-    fetch(url || `http://localhost:5000/toys?limit=20&skip=${(page + 1) * 20}`)
+    fetch(
+      url ||
+        `https://hero-versa-toy-server.vercel.app/toys?limit=20&skip=${
+          (page + 1) * 20
+        }`
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.length === 0) {
@@ -19,7 +26,11 @@ const AllToys = () => {
             title: "No Data Find",
             text: "please Search again",
           });
-          setUrl(`http://localhost:5000/toys?limit=20&skip=${(page + 1) * 20}`);
+          setUrl(
+            `https://hero-versa-toy-server.vercel.app/toys?limit=20&skip=${
+              (page + 1) * 20
+            }`
+          );
         }
         setToys(data);
       });
@@ -28,9 +39,15 @@ const AllToys = () => {
   const handleSearch = () => {
     const searchValue = searchText.current.value;
     if (searchValue) {
-      setUrl(`http://localhost:5000/toys-name/${searchValue}?limit=20`);
+      setUrl(
+        `https://hero-versa-toy-server.vercel.app/toys-name/${searchValue}?limit=20`
+      );
     } else {
-      setUrl(`http://localhost:5000/toys?limit=20&skip=${(page + 1) * 20}`);
+      setUrl(
+        `https://hero-versa-toy-server.vercel.app/toys?limit=20&skip=${
+          (page + 1) * 20
+        }`
+      );
     }
     console.log(searchValue);
   };

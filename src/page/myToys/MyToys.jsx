@@ -2,14 +2,19 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import MyToyRow from "./MyToyRow";
+import useUpdateTitle from "../../Hook/useUpdateTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [toysTotal, setToysTotal] = useState([]);
   const [url, setUrl] = useState("");
+  useUpdateTitle("My toys");
   useEffect(() => {
-    fetch(url || `http://localhost:5000/my-toys?email=${user?.email}&limit=20`)
+    fetch(
+      url ||
+        `https://hero-versa-toy-server.vercel.app/my-toys?email=${user?.email}&limit=20`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -17,7 +22,9 @@ const MyToys = () => {
   }, [user, url]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-toys-total?email=${user.email}`)
+    fetch(
+      `https://hero-versa-toy-server.vercel.app/my-toys-total?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setToysTotal(data.total));
   });
@@ -33,7 +40,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -60,7 +67,7 @@ const MyToys = () => {
           <select
             onChange={(e) => {
               setUrl(
-                `http://localhost:5000/my-toys?email=${user?.email}&limit=20&sort=${e.target.value}`
+                `https://hero-versa-toy-server.vercel.app/my-toys?email=${user?.email}&limit=20&sort=${e.target.value}`
               );
             }}
             className="select select-bordered select-sm"

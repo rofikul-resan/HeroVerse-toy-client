@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import gif from "../img/error404.gif";
 import { AiFillHome } from "react-icons/ai";
+import useUpdateTitle from "../Hook/useUpdateTitle";
 const Error404 = () => {
+  useUpdateTitle("Error");
   return (
     <div className="grid md:grid-cols-2 gap-14 place-items-center h-screen">
       <div>

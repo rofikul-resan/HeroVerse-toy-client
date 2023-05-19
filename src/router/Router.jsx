@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           </PrivetRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://hero-versa-toy-server.vercel.app/toys/${params.id}`),
       },
     ],
   },

@@ -5,7 +5,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import ReqLoading from "../../Components/ReqLoading";
+import useUpdateTitle from "../../Hook/useUpdateTitle";
 const Login = () => {
+  useUpdateTitle(" Log In");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state;

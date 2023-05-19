@@ -5,8 +5,10 @@ import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import ReqLoading from "../../Components/ReqLoading";
+import useUpdateTitle from "../../Hook/useUpdateTitle";
 
 const SingUp = () => {
+  useUpdateTitle("Sing Up");
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state;

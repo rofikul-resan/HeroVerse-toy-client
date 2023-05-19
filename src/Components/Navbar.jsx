@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { AiOutlineMenuUnfold } from "react-icons/ai";
+import ScrollToTop from "./ScrollToTop";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,6 +10,7 @@ const Navbar = () => {
   const location = useLocation();
   return (
     <nav className="bg-base-200 shadow-md">
+      <ScrollToTop path={location.pathname} />
       <div className="w-11/12 mx-auto relative flex flex-col md:flex-row justify-between md:items-center p-5">
         <button
           onClick={() => setNavShow(!navShow)}
