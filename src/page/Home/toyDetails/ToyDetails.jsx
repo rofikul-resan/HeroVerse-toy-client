@@ -19,7 +19,7 @@ const ToyDetails = () => {
   return (
     <div>
       <div className="md:w-9/12 mx-auto grid md:grid-cols-2 gap-12 my-32">
-        <div className="border border-black relative">
+        <div className="border border-black relative flex items-center">
           <img src={pictureURL} alt={name} className="mx-auto my-8" />
           <span className="badge badge-secondary font-semibold absolute top-4 left-4 z-10 uppercase">
             {" "}
