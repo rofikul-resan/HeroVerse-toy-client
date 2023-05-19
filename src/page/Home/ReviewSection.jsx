@@ -9,7 +9,7 @@ const ReviewSection = () => {
   return (
     <div className="hidden md:block">
       <div className="md:w-1/2 text-center space-y-6 mb-12 mx-auto">
-        <h1 className="font-bold">Peoples Review</h1>
+        <h1 className="font-bold">Our Store Review</h1>
         <p>
           {" "}
           In the Toy Photo Gallery section, you can showcase a collection of

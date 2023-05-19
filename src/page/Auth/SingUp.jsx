@@ -30,7 +30,7 @@ const SingUp = () => {
           .catch();
         Swal.fire({
           icon: "success",
-          title: "Log in successful...",
+          title: "User Sing Up success...",
         });
         navigate(from || "/");
       })
