@@ -43,6 +43,8 @@ const MyToys = () => {
     });
   };
 
+  const handelUpdateToy = () => {};
+
   return (
     <div>
       <h1 className="my-4 border-b-2 mx-auto px-4 pb-2 shadow-md w-fit  ">

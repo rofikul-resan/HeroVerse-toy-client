@@ -20,13 +20,17 @@ const CategoryContener = ({ category }) => {
           <ToyCard key={toy._id} toy={toy} />
         ))}
       </div>
-      {limit <= 6 && (
-        <button
-          onClick={() => setLimit(100)}
-          className="btn btn-success mx-auto block mt-4"
-        >
-          See More
-        </button>
+      {toys.length > 0 && (
+        <>
+          {limit <= 6 && (
+            <button
+              onClick={() => setLimit(100)}
+              className="btn btn-success mx-auto block mt-4"
+            >
+              See More
+            </button>
+          )}
+        </>
       )}
     </div>
   );
