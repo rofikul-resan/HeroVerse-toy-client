@@ -96,9 +96,9 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               name="price"
-              placeholder={price}
+              defaultValue={price}
               className="input input-bordered bg-white"
               required
             />
@@ -110,9 +110,10 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               //   placeholder="Available Quantity"
-              placeholder={quantity}
+              defaultValue={quantity}
+              required
               name="quantity"
               className="input input-bordered bg-white"
             />
@@ -124,9 +125,10 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="text"
+              type="number"
               //   placeholder="Available Quantity"
-              placeholder={rating}
+              defaultValue={rating}
+              required
               name="rating"
               className="input input-bordered bg-white"
             />
@@ -137,6 +139,7 @@ const UpdateToy = () => {
             name="description"
             placeholder="Description"
             defaultValue={description}
+            required
             className="h-60 w-full resize-none input input-bordered bg-white mt-8 p-6"
           ></textarea>
         </div>

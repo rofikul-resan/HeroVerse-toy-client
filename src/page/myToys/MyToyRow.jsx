@@ -18,8 +18,8 @@ const MyToyRow = ({ toy, handleDeleteToy }) => {
       <td>{sellerName}</td>
       <td>{sellerEmail}</td>
       <td>{subCategory}</td>
-      <td>{price}</td>
-      <td>{quantity}</td>
+      <td>$ {price}</td>
+      <td>{quantity} Pics</td>
       <td>
         <div className="w-fit mx-auto">
           <Link

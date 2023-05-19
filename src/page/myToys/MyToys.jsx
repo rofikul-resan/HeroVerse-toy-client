@@ -6,7 +6,6 @@ import MyToyRow from "./MyToyRow";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
-  //   const [page, setPage] = useState(0);
   const [url, setUrl] = useState("");
   useEffect(() => {
     fetch(url || `http://localhost:5000/my-toys?email=${user?.email}&limit=20`)
@@ -43,13 +42,27 @@ const MyToys = () => {
     });
   };
 
-  const handelUpdateToy = () => {};
-
   return (
     <div>
-      <h1 className="my-4 border-b-2 mx-auto px-4 pb-2 shadow-md w-fit  ">
-        Toy That You added
-      </h1>
+      <div className="relative">
+        <h1 className="my-4 border-b-2 mx-auto px-4 pb-2 shadow-md w-fit  ">
+          Toy That You added
+        </h1>
+        <div className="flex gap-2 items-center absolute top-4 right-4">
+          <h4>Sort Price </h4>
+          <select
+            onChange={(e) => {
+              setUrl(
+                `http://localhost:5000/my-toys?email=${user?.email}&limit=20&sort=${e.target.value}`
+              );
+            }}
+            className="select select-bordered select-sm"
+          >
+            <option value="ascending">Ascending </option>
+            <option value="descending">Descending </option>
+          </select>
+        </div>
+      </div>
       <div className="overflow-x-auto mb-16 mt-8 flex justify-between relative">
         <table className="table table-zebra  md:w-full ">
           {/* head */}
