@@ -1,13 +1,11 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ToyRow from "./ToyRow";
-import { AuthContext } from "../../provider/AuthProvider";
 import { BiSearchAlt } from "react-icons/bi";
 import Swal from "sweetalert2";
 import ReqLoading from "../../Components/ReqLoading";
 
 const AllToys = () => {
   const searchText = useRef("");
-  const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [page, setPage] = useState(0);
   const [url, setUrl] = useState("");
@@ -51,29 +49,12 @@ const AllToys = () => {
         </button>
       </div>
       <div className="overflow-x-auto mb-16 mt-8 flex justify-between relative">
-        {user ? (
-          <div className="px-3 hidden md:block space-y-2 border border-gray-600 h-fit py-6 ml-2 bg-sky-100 ">
-            <div className="h-20 w-20">
-              <img src={user?.photoURL} alt="" className="rounded-md" />
-            </div>
-            <h4>
-              <span className="font-semibold italic">Name : </span>
-              {user?.displayName}
-            </h4>
-            <p className="text-sm">
-              <span className="font-semibold italic">Email : </span>
-              {user?.email}
-            </p>
-          </div>
-        ) : (
-          <div></div>
-        )}
         {toys.length === 0 ? (
-          <div className="md:w-10/12 relative">
+          <div className="md:w-11/12 h-60 mx-auto relative">
             <ReqLoading />
           </div>
         ) : (
-          <table className="table table-zebra  md:w-10/12 ">
+          <table className="table table-zebra mx-auto md:w-11/12 ">
             {/* head */}
             <thead>
               <tr>

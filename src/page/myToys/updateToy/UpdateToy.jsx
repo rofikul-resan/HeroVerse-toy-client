@@ -57,20 +57,26 @@ const UpdateToy = () => {
       <img src={pictureURL} alt={name} className="mx-auto h-60" />
       <form
         onSubmit={handelUpdateToy}
-        className="md:w-10/12 mb-20 mt-4 mx-auto px-14 py-6 rounded-lg bg-base-300"
+        className="md:w-10/12 mb-20 mt-4 mx-auto px-4 md:px-14 py-6 rounded-lg bg-base-300"
       >
         <h1 className="text-center mb-3 capitalize ">{name}</h1>
-        <div className="flex justify-evenly w-8/12 mx-auto my-4 border-b-2 border-black pb-2">
+        <div className="flex justify-evenly md:w-8/12 mx-auto my-4 border-b-2 border-black pb-2">
           <p>
-            <span className="font-semibold italic"> Seller Name : </span>
+            <span className="font-semibold italic block md:inline">
+              {" "}
+              Seller Name :{" "}
+            </span>
             {sellerName}
           </p>
           <p>
-            <span className="font-semibold italic"> Seller Email : </span>
+            <span className="font-semibold italic block md:inline">
+              {" "}
+              Seller Email :{" "}
+            </span>
             {sellerEmail}
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           <div className="form-control">
             <label className="label">
               <span className="label-text italic text-xl font-semibold">

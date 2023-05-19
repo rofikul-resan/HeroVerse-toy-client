@@ -8,7 +8,7 @@ const ShopByCategory = () => {
     <div>
       <div className="md:w-1/2 text-center space-y-6 mb-12 mx-auto">
         <h1 className="font-bold">Filter Your Action Hero</h1>
-        <p>
+        <p className="p-10">
           {" "}
           In the Toy Photo Gallery section, you can showcase a collection of
           captivating and visually appealing images of your toys. Here are some

@@ -6,6 +6,7 @@ import MyToyRow from "./MyToyRow";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  const [toysTotal, setToysTotal] = useState([]);
   const [url, setUrl] = useState("");
   useEffect(() => {
     fetch(url || `http://localhost:5000/my-toys?email=${user?.email}&limit=20`)
@@ -14,6 +15,12 @@ const MyToys = () => {
         setToys(data);
       });
   }, [user, url]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/my-toys-total?email=${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setToysTotal(data.total));
+  });
 
   const handleDeleteToy = (id) => {
     Swal.fire({
@@ -45,10 +52,10 @@ const MyToys = () => {
   return (
     <div>
       <div className="relative">
-        <h1 className="my-4 border-b-2 mx-auto px-4 pb-2 shadow-md w-fit  ">
-          Toy That You added
-        </h1>
-        <div className="flex gap-2 items-center absolute top-4 right-4">
+        <p className="my-4 text-xl md:text-4xl border-b-2 mx-auto px-4 pb-2 shadow-md w-fit  ">
+          Toy You added {toysTotal} Item
+        </p>
+        <div className="flex gap-2 items-center md:absolute top-4 right-4">
           <h4>Sort Price </h4>
           <select
             onChange={(e) => {

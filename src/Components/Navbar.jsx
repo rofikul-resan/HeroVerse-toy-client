@@ -1,18 +1,32 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { AiOutlineMenuUnfold } from "react-icons/ai";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [navShow, setNavShow] = useState(false);
   const location = useLocation();
   return (
     <nav className="bg-base-200 shadow-md">
-      <div className="w-11/12 mx-auto flex justify-between items-center p-5">
+      <div className="w-11/12 mx-auto relative flex flex-col md:flex-row justify-between md:items-center p-5">
+        <button
+          onClick={() => setNavShow(!navShow)}
+          className="absolute md:hidden right-5 top-3 btn btn-ghost text-xl"
+        >
+          {!navShow ? <AiOutlineMenuUnfold /> : "X"}
+        </button>
         <div className="w-fit">
-          <img className="w-[100px] mx-auto" src="/logo.svg" alt="logo" />
-          <h2 className="font-bold text-black">HeroVerse Toys</h2>
+          <img className="w-[100px] mx-auto mb-2" src="/logo.svg" alt="logo" />
+          <h2 className="font-bold hidden md:block text-black">
+            HeroVerse Toys
+          </h2>
         </div>
-        <div className="flex flex-col md:flex-row gap-6 text-lg  md:items-center font-semibold">
+        <div
+          className={`flex flex-col relative z-20 md:flex-row gap-3 md:gap-6 text-lg  md:items-center font-semibold ${
+            navShow ? "" : "hidden md:flex"
+          }`}
+        >
           <NavLink
             to={"/"}
             className={({ isActive }) =>
@@ -56,7 +70,7 @@ const Navbar = () => {
               >
                 My Toys
               </NavLink>
-              <div className="dropdown dropdown-end">
+              <div className="dropdown absolute md:static bottom-0 right-6 z-10 ml-auto dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
                     <img

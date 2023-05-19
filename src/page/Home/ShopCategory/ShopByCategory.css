@@ -4,7 +4,7 @@
 }
 
 .react-tabs__tab {
-  @apply w-32 text-black text-center focus-visible:outline-red-50  !important;
+  @apply w-24  text-black text-center focus-visible:outline-red-50  !important;
 }
 
 #tab-contener {

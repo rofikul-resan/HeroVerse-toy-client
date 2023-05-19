@@ -36,8 +36,8 @@ const Banner = () => {
         </SwiperSlide>
       </Swiper>
       <div className="absolute inset-0 bg-black/80 z-10 text-white  md:px-16  ">
-        <div className="w-2/5 space-y-8">
-          <h1 className=" text-6xl font-bold mt-20">
+        <div className="md:w-2/5 ml-4 space-y-8">
+          <h1 className="text-xl md:text-6xl font-bold mt-20">
             Welcome <br /> Our toy store
           </h1>
           <p>
@@ -45,8 +45,8 @@ const Banner = () => {
             Text, Design Element Can Be Used for Card, Label, Invitation,
             Certificate, Flyer, Coupon, Tag
           </p>
-          <div>
-            <button className="btn btn-primary rounded-none mr-3 w-44 ">
+          <div className="flex gap-4 flex-col md:flex-row">
+            <button className="btn btn-primary rounded-none w-44 ">
               About Us
             </button>
             <button className="btn btn-outline btn-success rounded-none w-44 ">

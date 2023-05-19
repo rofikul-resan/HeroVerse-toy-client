@@ -14,7 +14,7 @@ const PhotoGallery = () => {
   ];
   return (
     <div>
-      <div className="md:w-1/2 text-center space-y-6 mb-12 mx-auto">
+      <div className="md:w-1/2 text-center space-y-6 mb-12 px-6 mx-auto">
         <h1 className="font-bold">Our Toys Photo Gallery </h1>
         <p>
           In the Toy Photo Gallery section, you can showcase a collection of
