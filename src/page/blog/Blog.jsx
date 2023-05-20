@@ -1,7 +1,7 @@
 const Blog = () => {
   return (
-    <div className="p-16">
-      <div className="card w-10/12 mx-auto mt-4 bg-base-300 shadow-xl">
+    <div className="p-16 space-y-8">
+      <div className="card w-10/12 mx-auto mt-4 bg-sky-200 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">
             What is an access token and refresh token? How do they work and
@@ -33,7 +33,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="card w-10/12 mx-auto mt-4 bg-base-300 shadow-xl">
+      <div className="card w-10/12 mx-auto mt-4 bg-sky-200 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">Compare SQL and NoSQL databases</h2>
           <div className="w-full">
@@ -88,7 +88,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="card w-10/12 mx-auto mt-4 bg-base-300 shadow-xl">
+      <div className="card w-10/12 mx-auto mt-4 bg-sky-200 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">What is express js? What is Nest JS ?</h2>
           <div className="space-y-3">
@@ -113,6 +113,27 @@ const Blog = () => {
               <span className="font-bold">
                 It alternative Express.js but more powerful.
               </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="card w-10/12 mx-auto mt-4 bg-sky-200 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">
+            What is MongoDB aggregate and how does it work ?
+          </h2>
+          <div className="space-y-3">
+            <p>
+              {" "}
+              <span className="font-bold">MongoDB aggregate</span>
+              is a set of operations that can be used to process data in a
+              MongoDB collection. Aggregation operations can be used to group
+              data, calculate values, and perform other operations on the data.
+            </p>
+            <p>
+              MongoDB aggregate operations are performed using a pipeline. A
+              pipeline have one or more stages. Each stage performs an operation
+              on the input documents.
             </p>
           </div>
         </div>
