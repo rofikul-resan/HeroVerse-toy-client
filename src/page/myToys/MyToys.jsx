@@ -18,9 +18,9 @@ const MyToys = () => {
   useEffect(() => {
     fetch(
       // url ||
-      `http://localhost:5000/my-toys?email=${user?.email}&limit=${limit}&skip=${
-        page * limit
-      }&sort=${sort}`
+      `https://hero-versa-toy-server.vercel.app/my-toys?email=${
+        user?.email
+      }&limit=${limit}&skip=${page * limit}&sort=${sort}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -29,7 +29,9 @@ const MyToys = () => {
   }, [user, page, limit, sort]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-toys-total?email=${user.email}`)
+    fetch(
+      `https://hero-versa-toy-server.vercel.app/my-toys-total?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setToysTotal(data.total));
   });
@@ -45,7 +47,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -55,7 +57,6 @@ const MyToys = () => {
               setToys(remain);
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
             }
-            console.log(data);
           });
       }
     });

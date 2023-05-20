@@ -19,7 +19,10 @@ const AllToys = () => {
   console.log(totalToy);
   useEffect(() => {
     fetch(
-      url || `http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`
+      url ||
+        `https://hero-versa-toy-server.vercel.app/toys?limit=${limit}&skip=${
+          page * limit
+        }`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -29,7 +32,11 @@ const AllToys = () => {
             title: "No Data Find",
             text: "please Search again",
           });
-          setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * 20}`);
+          setUrl(
+            `https://hero-versa-toy-server.vercel.app/toys?limit=${limit}&skip=${
+              page * 20
+            }`
+          );
         }
         setToys(data);
       });
@@ -40,16 +47,26 @@ const AllToys = () => {
     if (searchValue) {
       setLimit(20);
       setPage(0);
-      setUrl(`http://localhost:5000/toys-name/${searchValue}?limit=20`);
+      setUrl(
+        `https://hero-versa-toy-server.vercel.app/toys-name/${searchValue}?limit=20`
+      );
     } else {
-      setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`);
+      setUrl(
+        `https://hero-versa-toy-server.vercel.app/toys?limit=${limit}&skip=${
+          page * limit
+        }`
+      );
       console.log("click");
     }
   };
 
   //use for if search result 0 pagination can  work
   useEffect(() => {
-    setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`);
+    setUrl(
+      `https://hero-versa-toy-server.vercel.app/toys?limit=${limit}&skip=${
+        page * limit
+      }`
+    );
   }, [page, limit]);
   return (
     <div>

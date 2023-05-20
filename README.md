@@ -46,6 +46,7 @@ To deploy this project run
 
 ## 🚀 About Me
 
+My name is Rofikul Islam Resan...
 I'm a React developer from Bangladesh ...
 
 ## 🔗 Links

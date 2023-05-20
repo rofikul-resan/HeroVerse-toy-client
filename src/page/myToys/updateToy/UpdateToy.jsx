@@ -6,7 +6,7 @@ import useUpdateTitle from "../../../Hook/useUpdateTitle";
 const UpdateToy = () => {
   const [toy, setToy] = useState({});
   useUpdateTitle("Update Toy");
-  const naviget = useNavigate();
+  const navigate = useNavigate();
   const {
     name,
     pictureURL,
@@ -21,7 +21,7 @@ const UpdateToy = () => {
   console.log(subCategory);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/toys/${id}`)
+    fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
   }, [id]);
@@ -36,7 +36,7 @@ const UpdateToy = () => {
     const description = form.description.value;
     const updatedToy = { subCategory, price, rating, quantity, description };
     console.log(updatedToy);
-    fetch(`http://localhost:5000/toys/${id}`, {
+    fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const UpdateToy = () => {
             timer: 1000,
           });
           form.reset();
-          naviget("/my-toy");
+          navigate("/my-toy");
         }
       });
   };
@@ -106,7 +106,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="number"
+              type="text"
               name="price"
               defaultValue={price}
               className="input input-bordered bg-white"
@@ -120,7 +120,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="number"
+              type="text"
               //   placeholder="Available Quantity"
               defaultValue={quantity}
               required
@@ -135,7 +135,7 @@ const UpdateToy = () => {
               </span>
             </label>
             <input
-              type="number"
+              type="text"
               //   placeholder="Available Quantity"
               defaultValue={rating}
               required

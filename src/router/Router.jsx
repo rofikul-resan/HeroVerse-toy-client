@@ -12,8 +12,6 @@ import PrivetRouter from "./PrivetRouter";
 import MyToys from "../page/myToys/MyToys";
 import UpdateToy from "../page/myToys/updateToy/UpdateToy";
 import Blog from "../page/blog/Blog";
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +33,8 @@ const router = createBrowserRouter([
       {
         path: "/all-toy",
         element: <AllToys />,
-        loader: () => fetch("http://localhost:5000/total-toy"),
+        loader: () =>
+          fetch("https://hero-versa-toy-server.vercel.app/total-toy"),
       },
       {
         path: "/update-toy/:id",
@@ -61,7 +60,7 @@ const router = createBrowserRouter([
           </PrivetRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://hero-versa-toy-server.vercel.app/toys/${params.id}`),
       },
     ],
   },

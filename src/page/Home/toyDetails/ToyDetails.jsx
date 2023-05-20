@@ -15,9 +15,8 @@ const ToyDetails = () => {
     pictureURL,
     name,
     description,
-    availableQuantity,
+    quantity,
   } = toy;
-  console.log(toy._id);
   return (
     <div className="p-4">
       <div className="md:w-9/12 mx-auto grid md:grid-cols-2 gap-12 my-8 md:my-32">
@@ -32,9 +31,11 @@ const ToyDetails = () => {
           <h2 className="font-bold capitalize text-4xl md:text-6xl">
             {name} Toy
           </h2>
-          <div className="flex items-center gap-3 md:text-2xl">
-            <RatingCom>{rating}</RatingCom> <span>{rating} % Rating</span>{" "}
-            <button className="link link-hover ml-8 gap-3 btn btn-outline">
+          <div className="flex flex-col md:flex-row md:items-center gap-3 md:text-xl">
+            <div>
+              <RatingCom>{rating}</RatingCom> <span>{rating} % Rating</span>
+            </div>
+            <button className="link link-hover md:ml-8 gap-3 btn btn-outline">
               <BsPen /> Add Review
             </button>
           </div>
@@ -50,7 +51,7 @@ const ToyDetails = () => {
           </p>
           <p>
             <span className="font-semibold">Available Quantity :</span>{" "}
-            {availableQuantity} Pics
+            {quantity} Pics
           </p>
           <p className="text-2xl font-semibold border-b-2 italic">Toy Info</p>{" "}
           <p>{description}</p>
