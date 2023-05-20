@@ -11,6 +11,7 @@ import AllToys from "../page/allToys/AllToys";
 import PrivetRouter from "./PrivetRouter";
 import MyToys from "../page/myToys/MyToys";
 import UpdateToy from "../page/myToys/updateToy/UpdateToy";
+import Blog from "../page/blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/update-toy/:id",
         element: <UpdateToy />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
       {
         path: "/my-toy",

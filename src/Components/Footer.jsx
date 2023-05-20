@@ -3,7 +3,7 @@ import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer md:justify-items-center p-10 bg-sky-300 text-black ">
+      <footer className="footer md:justify-items-center px-10 pb-4 pt-8 bg-sky-300 text-black ">
         <div>
           <span className="footer-title">Services</span>
           <div className="flex md:flex-col gap-3">
@@ -30,8 +30,18 @@ const Footer = () => {
             <a className="link link-hover">Cookie policy</a>{" "}
           </div>
         </div>
+        <div>
+          <span className="footer-title">CONTACT US</span>
+          <div className="flex md:flex-col gap-3">
+            <a className="link link-hover">Phone number: (907) 486-2612</a>
+            <a className="link link-hover">
+              City: Kodiak -- State: Alaska (AK)
+            </a>
+            <a className="link link-hover">Zipcode: 99615 -- Country: USA</a>{" "}
+          </div>
+        </div>
       </footer>
-      <footer className="footer px-10 py-4  bg-sky-300 text-base-content">
+      <footer className="footer px-10 md:px-20 pb-4  bg-sky-300 text-base-content">
         <div className="items-center flex  flex-col md:flex-row">
           <img src="/logo.svg" alt="" />
           <p>
@@ -54,6 +64,10 @@ const Footer = () => {
           </div>
         </div>
       </footer>
+      <p className="text-center text-black">
+        <span className="font-semibold">&copy; Copyright</span> Agency and
+        contributors HeroVers Terms 2023.
+      </p>
     </div>
   );
 };

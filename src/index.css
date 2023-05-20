@@ -14,3 +14,14 @@ h3 {
 h4 {
   @apply text-xl;
 }
+.blog th,
+.blog td {
+  border: 1px solid grey;
+  /* border-collapse: collapse; */
+  max-width: 50%;
+  word-wrap: break-word;
+  padding: 5px;
+}
+.blog th {
+  text-align: center;
+}
