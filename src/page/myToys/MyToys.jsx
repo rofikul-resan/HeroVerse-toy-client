@@ -130,7 +130,8 @@ const MyToys = () => {
             <option value="20">20</option>
             <option value="15">15</option>
             <option value="10">10</option>
-          </select>
+          </select>{" "}
+          <span className="font-semibold ml-2"> Per page</span>
         </div>
       </div>
     </div>

@@ -7,16 +7,20 @@ import useUpdateTitle from "../../Hook/useUpdateTitle";
 import { useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
-  const totalToy = useLoaderData();
+  const totalToyOnDb = useLoaderData();
   useUpdateTitle("All Toys");
   const searchText = useRef("");
   const [toys, setToys] = useState([]);
   const [page, setPage] = useState(0);
+  const [totalToy, setTotalToy] = useState(totalToyOnDb.total);
   const [limit, setLimit] = useState(20);
   const [url, setUrl] = useState("");
-  const totalPage = Math.ceil(+totalToy.total / +limit);
+  const totalPage = Math.ceil(+totalToy / +limit);
+  console.log(totalToy);
   useEffect(() => {
-    fetch(url || `http://localhost:5000/toys?limit=${limit}&skip=${page * 20}`)
+    fetch(
+      url || `http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.length === 0) {
@@ -36,17 +40,17 @@ const AllToys = () => {
     if (searchValue) {
       setLimit(20);
       setPage(0);
-      setUrl(
-        `http://localhost:5000/toys-name/${searchValue}?limit=${limit}&skip=${
-          page * 20
-        }`
-      );
+      setUrl(`http://localhost:5000/toys-name/${searchValue}?limit=20`);
     } else {
-      setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * 20}`);
+      setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`);
+      console.log("click");
     }
-    console.log(searchValue);
   };
 
+  //use for if search result 0 pagination can  work
+  useEffect(() => {
+    setUrl(`http://localhost:5000/toys?limit=${limit}&skip=${page * limit}`);
+  }, [page, limit]);
   return (
     <div>
       <div className="mt-6 w-fit mx-auto flex gap-3">
@@ -107,13 +111,12 @@ const AllToys = () => {
             className="select select-bordered select-sm"
             onChange={(e) => setLimit(e.target.value)}
           >
-            <option value="5">5</option>
-            <option value="10">10</option>
+            <option value="20">20</option>
             <option value="15">15</option>
-            <option selected value="20">
-              20
-            </option>
-          </select>
+            <option value="10">10</option>
+            <option value="5">5</option>
+          </select>{" "}
+          <span className="font-semibold ml-2"> Per page</span>
         </div>
       </div>
     </div>
