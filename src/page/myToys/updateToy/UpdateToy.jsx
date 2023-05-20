@@ -21,7 +21,7 @@ const UpdateToy = () => {
   console.log(subCategory);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`)
+    fetch(`http://localhost:5000/toys/${id}`)
       .then((res) => res.json())
       .then((data) => setToy(data));
   }, [id]);
@@ -36,7 +36,7 @@ const UpdateToy = () => {
     const description = form.description.value;
     const updatedToy = { subCategory, price, rating, quantity, description };
     console.log(updatedToy);
-    fetch(`https://hero-versa-toy-server.vercel.app/toys/${id}`, {
+    fetch(`http://localhost:5000/toys/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

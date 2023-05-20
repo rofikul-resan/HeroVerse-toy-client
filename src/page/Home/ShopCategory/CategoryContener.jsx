@@ -5,9 +5,7 @@ const CategoryContener = ({ category }) => {
   const [limit, setLimit] = useState(6);
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://hero-versa-toy-server.vercel.app/category?category=${category}&limit=${limit}`
-    )
+    fetch(`http://localhost:5000/category?category=${category}&limit=${limit}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [category, limit]);
