@@ -8,15 +8,25 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const [toysTotal, setToysTotal] = useState([]);
-  const [url, setUrl] = useState("");
+  const [sort, setSort] = useState(null);
+  const [page, setPage] = useState(0);
+  const [limit, setLimit] = useState(20);
+  // const [url, setUrl] = useState("");
+  const totalPage = Math.ceil(+toysTotal / +limit);
+
   useUpdateTitle("My toys");
   useEffect(() => {
-    fetch(url || `http://localhost:5000/my-toys?email=${user?.email}&limit=20`)
+    fetch(
+      // url ||
+      `http://localhost:5000/my-toys?email=${user?.email}&limit=${limit}&skip=${
+        page * limit
+      }&sort=${sort}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
       });
-  }, [user, url]);
+  }, [user, page, limit, sort]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/my-toys-total?email=${user.email}`)
@@ -61,14 +71,12 @@ const MyToys = () => {
           <h4>Sort Price </h4>
           <select
             onChange={(e) => {
-              setUrl(
-                `http://localhost:5000/my-toys?email=${user?.email}&limit=20&sort=${e.target.value}`
-              );
+              setSort(e.target.value);
             }}
             className="select select-bordered select-sm"
           >
-            <option value="ascending">Ascending </option>
-            <option value="descending">Descending </option>
+            <option value={-1}>Ascending </option>
+            <option value={1}>Descending </option>
           </select>
         </div>
       </div>
@@ -99,6 +107,31 @@ const MyToys = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="flex gap-4 mb-5 w-fit mx-auto">
+        <div className="btn-group">
+          {[...Array(totalPage).keys()].map((btnNo) => (
+            <button
+              onClick={() => setPage(btnNo)}
+              className={`btn btn-sm btn-accent ${
+                btnNo === page && "btn-active"
+              }`}
+              key={btnNo}
+            >
+              {btnNo + 1}
+            </button>
+          ))}
+        </div>
+        <div>
+          <select
+            className="select select-bordered select-sm"
+            onChange={(e) => setLimit(e.target.value)}
+          >
+            <option value="20">20</option>
+            <option value="15">15</option>
+            <option value="10">10</option>
+          </select>
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,6 @@ const AllToys = () => {
   const [limit, setLimit] = useState(20);
   const [url, setUrl] = useState("");
   const totalPage = Math.ceil(+totalToy.total / +limit);
-  console.log(totalPage);
   useEffect(() => {
     fetch(url || `http://localhost:5000/toys?limit=${limit}&skip=${page * 20}`)
       .then((res) => res.json())
@@ -111,7 +110,9 @@ const AllToys = () => {
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
-            <option value="20">20</option>
+            <option selected value="20">
+              20
+            </option>
           </select>
         </div>
       </div>

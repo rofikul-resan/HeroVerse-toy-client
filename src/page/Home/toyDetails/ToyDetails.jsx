@@ -17,7 +17,7 @@ const ToyDetails = () => {
     description,
     availableQuantity,
   } = toy;
-  console.log(toy);
+  console.log(toy._id);
   return (
     <div className="p-4">
       <div className="md:w-9/12 mx-auto grid md:grid-cols-2 gap-12 my-8 md:my-32">

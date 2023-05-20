@@ -12,6 +12,8 @@ import PrivetRouter from "./PrivetRouter";
 import MyToys from "../page/myToys/MyToys";
 import UpdateToy from "../page/myToys/updateToy/UpdateToy";
 import Blog from "../page/blog/Blog";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -47,8 +49,7 @@ const router = createBrowserRouter([
         path: "/my-toy",
         element: (
           <PrivetRouter>
-            {" "}
-            <MyToys />,
+            <MyToys />
           </PrivetRouter>
         ),
       },
